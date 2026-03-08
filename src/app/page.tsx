@@ -201,7 +201,7 @@ export default function CabalCoin() {
           </div>
 
           <div className="hidden md:flex items-center gap-8">
-            {["About", "Token", "Memes", "Community"].map((item) => (
+            {["About", "Token", "Community"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -453,9 +453,9 @@ export default function CabalCoin() {
         id="about"
         className="relative z-10 py-32 px-6"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Section label */}
-          <div className="reveal flex items-center gap-4 mb-6">
+          <div className="reveal flex items-center justify-center gap-4 mb-6">
             <TriangleIcon />
             <span
               className="text-xs tracking-[6px] uppercase"
@@ -496,8 +496,8 @@ export default function CabalCoin() {
               style={{
                 width: "60px",
                 height: "1px",
-                background: "linear-gradient(90deg, rgba(192,192,192,0.4), transparent)",
-                margin: "20px 0",
+                background: "linear-gradient(90deg, transparent, rgba(192,192,192,0.4), transparent)",
+                margin: "20px auto",
               }}
             />
             <p
@@ -518,12 +518,8 @@ export default function CabalCoin() {
 
           {/* Featured quote */}
           <div
-            className="reveal occult-frame"
-            style={{
-              borderLeft: "2px solid rgba(192,192,192,0.15)",
-              paddingLeft: "32px",
-              margin: "40px 0",
-            }}
+            className="reveal"
+            style={{ margin: "40px auto", maxWidth: "600px" }}
           >
             <p
               className="text-gold-gradient"
@@ -605,8 +601,8 @@ export default function CabalCoin() {
 
       {/* ─── Token Info Section ─── */}
       <section id="token" className="relative z-10 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="reveal flex items-center gap-4 mb-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="reveal flex items-center justify-center gap-4 mb-6">
             <TriangleIcon />
             <span
               className="text-xs tracking-[6px] uppercase"
@@ -695,10 +691,10 @@ export default function CabalCoin() {
         </div>
       </section>
 
-      {/* ─── Memes Section ─── */}
-      <section id="memes" className="relative z-10 py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="reveal flex items-center gap-4 mb-6">
+      {/* ─── Prophecy Section ─── */}
+      <section id="memes" className="relative z-10 py-32 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="reveal flex items-center justify-center gap-4 mb-6">
             <TriangleIcon />
             <span
               className="text-xs tracking-[6px] uppercase"
@@ -709,7 +705,7 @@ export default function CabalCoin() {
           </div>
 
           <h2
-            className="reveal text-silver-gradient mb-4"
+            className="reveal text-silver-gradient mb-16"
             style={{
               fontFamily: "Georgia, serif",
               fontSize: "clamp(28px, 5vw, 56px)",
@@ -720,79 +716,42 @@ export default function CabalCoin() {
             The Cabal Archives
           </h2>
 
-          {/* Narrative text */}
-          <div className="reveal mb-16 max-w-2xl">
-            <p
-              style={{
-                fontFamily: "Georgia, serif",
-                fontSize: "clamp(14px, 1.5vw, 17px)",
-                lineHeight: 2,
-                color: "rgba(192,192,192,0.4)",
-                letterSpacing: "0.04em",
-              }}
-            >
-              The market is chaos.
-              <br />
-              Narratives rise and fall.
-              <br />
-              But the Cabal remains.
-              <br />
-              <br />
-              <em style={{ color: "rgba(212, 175, 55, 0.7)" }}>OG takes the crown.</em>
-            </p>
-          </div>
-
-          {/* Meme Grid */}
-          <div className="reveal grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {/* Prophecy lines */}
+          <div className="reveal space-y-8">
             {[
-              {
-                src: "https://i.ytimg.com/vi/JQqRlVrUjzQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDJvJ32iINxWKZY4gzfB_DFq8091A",
-                caption: "They see it now.",
-              },
-              {
-                src: "https://media.licdn.com/dms/image/v2/D4E22AQE3wemwo8DvDA/feedshare-shrink_800/feedshare-shrink_800/0/1722943555648?e=2147483647&v=beta&t=elgX4GpNi0FvMP958QHtllIasO11KgaUSu-cxHqjHaM",
-                caption: "The OGs knew.",
-              },
-              {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnMT7Kwbn2p3sb86O-25VqL-sA2Dl3XZrvMg&s",
-                caption: "Before the crowd.",
-              },
-              {
-                src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBZtQ4lNb42PI3W-7RZ_mSNlctkYCOQpAYQ&s",
-                caption: "The crown is yours.",
-              },
-            ].map((meme, i) => (
-              <div
+              { text: "The market is chaos.", delay: "0s" },
+              { text: "Narratives rise and fall.", delay: "0.1s" },
+              { text: "But the Cabal remains.", delay: "0.2s" },
+            ].map((line, i) => (
+              <p
                 key={i}
-                className="meme-item group"
                 style={{
-                  border: "1px solid rgba(192,192,192,0.08)",
-                  background: "rgba(255,255,255,0.02)",
-                  borderRadius: "2px",
-                  overflow: "hidden",
+                  fontFamily: "Georgia, serif",
+                  fontSize: "clamp(18px, 2.5vw, 28px)",
+                  lineHeight: 1.8,
+                  color: "rgba(192,192,192,0.45)",
+                  letterSpacing: "0.06em",
+                  fontStyle: "italic",
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={meme.src}
-                  alt={meme.caption}
-                  className="w-full object-cover"
-                  style={{ height: "clamp(150px, 20vw, 240px)", display: "block" }}
-                  loading="lazy"
-                />
-                <div
-                  className="px-3 py-2.5"
-                  style={{ borderTop: "1px solid rgba(192,192,192,0.06)" }}
-                >
-                  <p
-                    className="text-xs tracking-[2px] uppercase text-center"
-                    style={{ color: "rgba(192,192,192,0.35)", fontFamily: "Georgia, serif" }}
-                  >
-                    {meme.caption}
-                  </p>
-                </div>
-              </div>
+                {line.text}
+              </p>
             ))}
+
+            <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(192,192,192,0.15), transparent)", margin: "20px auto", maxWidth: "300px" }} />
+
+            <p
+              className="text-gold-gradient"
+              style={{
+                fontFamily: "Georgia, serif",
+                fontSize: "clamp(22px, 3.5vw, 42px)",
+                fontWeight: "700",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+              }}
+            >
+              OG takes the crown.
+            </p>
           </div>
         </div>
       </section>
